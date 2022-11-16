@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Embla</title>
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible"/>
+    <meta content="Embla帮助文档" name="description">
+
+    <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/emoji.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js"></script>
+
+    <link href="//cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.css" rel="stylesheet">
+    <script src="//cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+
+    <link href="docs/misty.css" rel="stylesheet">
+
+    <meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0" name="viewport">
+    <link href="//cdn.jsdelivr.net/npm/docsify/lib/themes/buble.css" rel="stylesheet">
+
+    <link href="docs/misty.css" rel="stylesheet">
+
+    <!--    https://github.com/erickjx/docsify-fontawesome-->
+    <link href="unpkg.com/@fortawesome/fontawesome-free/css/fontawesome.css" rel="stylesheet"/>
+    <link href="unpkg.com/@fortawesome/fontawesome-free/css/brands.css" rel="stylesheet"/>
+    <link href="unpkg.com/@fortawesome/fontawesome-free/css/regular.css" rel="stylesheet"/>
+    <link href="unpkg.com/@fortawesome/fontawesome-free/css/solid.css" rel="stylesheet"/>
+
+    <link href="//cdn.jsdelivr.net/npm/docsify-top-banner-plugin@latest/dist/style.css" rel="stylesheet"/>
+
+</head>
+<body>
+<div id="app">正在加载中......</div>
+<script>
+    var num = 0;
+    mermaid.initialize({startOnLoad: true});
+
+    window.$docsify = {
+        name: '',
+        loadSidebar: true,
+        subMaxLevel: 5,
+
+        topBanner: {
+            content: '欢迎使用 Embla',
+            defaultTag: 'span',
+            position: 'fixed',
+            backgroundColor: '#deebff',
+            zIndex: 99,
+            textColor: '#091E42',
+            linkColor: '#091E42',
+            textAlign: 'center',
+        },
+
+        search: "auto",
+        depth: 4,
+        noData: {
+            "/zh-cn/": "找不到结果",
+            "/": "No Results",
+        },
+        placeholder: {
+            "/zh-cn/": "搜索",
+            "/": "Type to search",
+        },
+        count: {countable: true, fontsize: '0.9em', color: 'rgb(90,90,90)', language: 'chinese'},
+        markdown: {
+            renderer: {
+                code: function (code, lang) {
+                    if (lang === "mermaid") {
+                        return '<div class="mermaid">' + mermaid.render("mermaid-svg-" + num++, code) + "</div>";
+                    }
+
+                    var pdf_renderer = function (code, lang, verify) {
+                        function unique_id_generator() {
+                            function rand_gen() {
+                                return Math.floor((Math.random() + 1) * 65536).toString(16).substring(1);
+                            }
+
+                            return rand_gen() + rand_gen() + '-' + rand_gen() + '-' + rand_gen() + '-' + rand_gen() + '-' + rand_gen() + rand_gen() + rand_gen();
+                        }
+
+                        if (lang && !lang.localeCompare('pdf', 'en', {sensitivity: 'base'})) {
+                            if (verify) {
+                                return true;
+                            } else {
+                                var divId = "markdown_code_pdf_container_" + unique_id_generator().toString();
+                                var container_list = [];
+                                if (localStorage.getItem('pdf_container_list')) {
+                                    container_list = JSON.parse(localStorage.getItem('pdf_container_list'));
+                                }
+                                container_list.push({"pdf_location": code, "div_id": divId});
+                                localStorage.setItem('pdf_container_list', JSON.stringify(container_list));
+                                return (
+                                    '<div style="margin-top:' + PDF_MARGIN_TOP + '; margin-bottom:' + PDF_MARGIN_BOTTOM + ';" id="' + divId + '">'
+                                    + '<a href="' + code + '"> Link </a> to ' + code +
+                                    '</div>'
+                                );
+                            }
+                        }
+                        return false;
+                    }
+
+                    if (pdf_renderer(code, lang, true)) {
+                        return pdf_renderer(code, lang, false);
+                    }
+
+                    return this.origin.code.apply(this, arguments);
+                },
+            },
+        },
+
+        customPageTitle: {
+            prefix: '🇺🇦',     // title prefix.
+            suffix: '',      // title suffix.
+        },
+
+        plugins: [
+            function (hook, vm) {
+                // parse twemoji
+                hook.doneEach(function () {
+                    twemoji.parse(document);
+                });
+            },
+        ],
+
+        progress: {
+            position: "top",
+            color: "var(--theme-color,#42b983)",
+            height: "3px",
+        },
+    }
+
+</script>
+<!--    https://jercarre.github.io/vega_docsify-->
+<script src="//cdn.jsdelivr.net/npm/vega@5"></script>
+<script src="//cdn.jsdelivr.net/npm/vega-lite@5"></script>
+<script src="//cdn.jsdelivr.net/npm/vega-embed@6"></script>
+<script src="//cdn.jsdelivr.net/gh/jerCarre/vega_docsify@v1.1/lib/docsivega.js"></script>
+
+<!-- twemoji -->
+<script src="//cdn.jsdelivr.net/gh/TaQini/docsify-twemoji@master/twemoji.min.js"></script>
+
+<!-- PDFObject.js is a required dependency of this plugin -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/pdfobject/2.1.1/pdfobject.min.js"></script>
+<!-- This is the source code of the pdf embed plugin -->
+<script src="path-to-file/docsify-pdf-embed.js"></script>
+<!-- or use this if you are not hosting the file yourself -->
+<script src="//unpkg.com/docsify-pdf-embed-plugin/src/docsify-pdf-embed.js"></script>
+
+<!--<script src="//unpkg.com/docsify-glossary/dist/docsify-glossary.min.js"></script>-->
+
+<script src="//unpkg.com/docsify-count/dist/countable.js"></script>
+
+<script src="//unpkg.com/docsify-fontawesome/dist/docsify-fontawesome.min.js"></script>
+
+<script src="//cdn.jsdelivr.net/npm/docsify-pangu/lib/pangu.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/docsify-progress@latest/dist/progress.min.js"></script>
+
+<script src="//cdn.jsdelivr.net/npm/@sujaykumarh/docsify-plugin-title@1.x/dist/plugin.min.js"></script>
+
+<script src="//cdn.jsdelivr.net/npm/codeblock-iframe@latest/dist/index.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/docsify-codeblock-iframe@latest/dist/index.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/docsify-top-banner-plugin@latest/dist/index.js"></script>
+
+<!-- Docsify v4 -->
+<script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
+</body>
+</html>
