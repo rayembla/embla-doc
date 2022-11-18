@@ -9,9 +9,6 @@
     <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/emoji.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js"></script>
 
-    <link href="//cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.css" rel="stylesheet">
-    <script src="//cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
-
     <link href="docs/misty.css" rel="stylesheet">
 
     <meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0" name="viewport">
@@ -32,7 +29,6 @@
 <div id="app">正在加载中......</div>
 <script>
     var num = 0;
-    mermaid.initialize({startOnLoad: true});
 
     window.$docsify = {
         name: '',
@@ -64,9 +60,9 @@
         markdown: {
             renderer: {
                 code: function (code, lang) {
-                    if (lang === "mermaid") {
-                        return '<div class="mermaid">' + mermaid.render("mermaid-svg-" + num++, code) + "</div>";
-                    }
+                    // if (lang === "mermaid") {
+                    //     return '<div class="mermaid">' + mermaid.render("mermaid-svg-" + num++, code) + "</div>";
+                    // }
 
                     var pdf_renderer = function (code, lang, verify) {
                         function unique_id_generator() {
@@ -161,6 +157,10 @@
 <script src="//cdn.jsdelivr.net/npm/docsify-codeblock-iframe@latest/dist/index.min.js"></script>
 
 <script src="https://cdn.jsdelivr.net/npm/docsify-top-banner-plugin@latest/dist/index.js"></script>
+
+<script src="//unpkg.com/mermaid/dist/mermaid.js"></script>
+<script src="//unpkg.com/docsify-mermaid@latest/dist/docsify-mermaid.js"></script>
+<script>mermaid.initialize({ startOnLoad: true });</script>
 
 <!-- Docsify v4 -->
 <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
