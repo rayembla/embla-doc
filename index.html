@@ -63,9 +63,9 @@
         markdown: {
             renderer: {
                 code: function (code, lang) {
-                    if (lang === "mermaid") {
-                        return '<div class="mermaid">' + mermaid.render("mermaid-svg-" + num++, code) + "</div>";
-                    }
+                    // if (lang === "mermaid") {
+                    //     return '<div class="mermaid">' + mermaid.render("mermaid-svg-" + num++, code) + "</div>";
+                    // }
 
                     var pdf_renderer = function (code, lang, verify) {
                         function unique_id_generator() {
