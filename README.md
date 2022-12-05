@@ -11,3 +11,5 @@
 > Telegram群组：https://t.me/+aVMJ5JjYZawzZWRh
 >
 > 节点状态、免费节点更新通知：https://t.me/embla1_state
+>
+> 视频下载助手：(@emblamediabot)[https://t.me/emblamediabot]
