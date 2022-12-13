@@ -18,6 +18,4 @@
 
 HTTP 服务的端口为 `25046`
 
-可见如下接口配置直接导入 [Postman](https://www.postman.com/) 中使用
-
-https://embla.cf/docs/straw.postman_collection.json
+接口文档地址：https://127.0.0.1:25046/doc
