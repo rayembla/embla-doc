@@ -1,0 +1,234 @@
+{
+	"info": {
+		"name": "straw"
+	},
+	"item": [
+		{
+			"name": "配置",
+			"item": [
+				{
+					"name": "获取配置",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{straw_host}}/api/v1/config",
+							"host": [
+								"{{straw_host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"config"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "设置用户编号",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user\": \"{{user}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{straw_host}}/api/v1/config/user",
+							"host": [
+								"{{straw_host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"config",
+								"user"
+							]
+						},
+						"description": "设置用户编号，通知进行登录授权操作"
+					},
+					"response": []
+				},
+				{
+					"name": "设置系统代理",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"enable\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{straw_host}}/api/v1/config/sys_proxy",
+							"host": [
+								"{{straw_host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"config",
+								"sys_proxy"
+							]
+						},
+						"description": "设置系统代理的配置\r\n如果是运行中的，需要重新启动"
+					},
+					"response": []
+				},
+				{
+					"name": "设置TUN的配置",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"enable\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{straw_host}}/api/v1/config/tun",
+							"host": [
+								"{{straw_host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"config",
+								"tun"
+							]
+						},
+						"description": "设置TUN的配置\r\n如果是运行中的，需要重新启动"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "代理",
+			"item": [
+				{
+					"name": "检测是否可以正常启动",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"enable\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{straw_host}}/api/v1/proxy/check",
+							"host": [
+								"{{straw_host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"proxy",
+								"check"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "启动代理服务",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"enable\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{straw_host}}/api/v1/proxy/start",
+							"host": [
+								"{{straw_host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"proxy",
+								"start"
+							]
+						},
+						"description": "如果已经启动的，会重启"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "echo",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{straw_host}}/echo",
+					"host": [
+						"{{straw_host}}"
+					],
+					"path": [
+						"echo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "关闭服务",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{straw_host}}/shutdown",
+					"host": [
+						"{{straw_host}}"
+					],
+					"path": [
+						"shutdown"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "straw_host",
+			"value": "127.0.0.1:25046",
+			"type": "string"
+		},
+		{
+			"key": "user",
+			"value": "",
+			"type": "string"
+		}
+	]
+}
