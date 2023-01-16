@@ -24,9 +24,15 @@
 #### 不知道如何其他软件使用
 
 1. 如果软件本身支持设置代理，可以通过 `http://127.0.0.1:25045` 或者 `socks://127.0.0.1:25045` 的方式设置软件代理
-2. 如果浏览器安装了 [Proxy SwitchyOmega](https://chrome.google.com/webstore/detail/proxy-switchyomega/padekgcemlokbadohgkifijomclgjgif)，参考上一条方式
+2. 如果浏览器安装了 [Proxy SwitchyOmega](https://chrome.google.com/webstore/detail/proxy-switchyomega/padekgcemlokbadohgkifijomclgjgif)
+，参考上一条方式
 3. 通过 `配置` 开启 `全局代理`
 4. （不推荐）通过 `配置` 开启 `Tun/Tap`
+
+#### 节能模式是什么
+
+通过降低 GUI 的数据刷新频率来降低资源占用，本身的 `core` 的大概会占用 0% 的CPU 和 60Mb 左右的内存，但是加上了 GUI 之后，会占用
+2% 的CPU 和 800Mb 左右的内存，开启节能模式后，会降低到 0.5% 的CPU 和 200Mb 左右的内存
 
 ## 模块说明
 
