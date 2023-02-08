@@ -4,7 +4,7 @@
 
 订阅转换后端地址：https://qvcp1z.cf/sub
 
-如果您的使用场景未被规则覆盖，可以在 [用户群 https://t.me/+KIUculv2diswZTEx](https://t.me/+KIUculv2diswZTEx)
+如果您的使用场景未被规则覆盖，可以在 [用户群 https://t.me/+7QY3vMI8JQI4ZWZh](https://t.me/+KIUculv2diswZTEx)
 中反馈申请收录。规则目前以以 `clash-core` 为基准
 
 ## 规则说明

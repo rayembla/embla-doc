@@ -34,9 +34,9 @@
 
 每天签到可以获取一定数量的通用积分，签到的方式有：
 
-- 在[用户群](https://t.me/+wica5MMBTvs2N2Rh)内发送 `/checkin`
-- 在[用户群](https://t.me/+wica5MMBTvs2N2Rh)内发送 `/check_in`
-- 在[用户群](https://t.me/+wica5MMBTvs2N2Rh)内发送 `签到`
+- 在[用户群](https://t.me/+7QY3vMI8JQI4ZWZh)内发送 `/checkin`
+- 在[用户群](https://t.me/+7QY3vMI8JQI4ZWZh)内发送 `/check_in`
+- 在[用户群](https://t.me/+7QY3vMI8JQI4ZWZh)内发送 `签到`
 
 ## 邀请积分
 

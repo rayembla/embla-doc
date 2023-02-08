@@ -21,7 +21,7 @@
 > 前51-200注册用户需要 10 邀请积分
 
 如果您<font color="#dc6b82">不想通过邀请积分来注册</font>
-，您也可以通过连续签到来获取积分，连续在 [用户群 https://t.me/+wica5MMBTvs2N2Rh](https://t.me/+wica5MMBTvs2N2Rh)
+，您也可以通过连续签到来获取积分，连续在 [用户群 https://t.me/+7QY3vMI8JQI4ZWZh](https://t.me/+7QY3vMI8JQI4ZWZh)
 内签到 7 天即可自动成为普通用户，但是通过这种方式注册的用户将不会获得注册时赠送的 500 `通用积分` 的奖励。
 
 如果您<font color="#dc6b82">想通过订阅链接的方式</font>使用的话，当您成为了 `普通用户` 后，您可以通过 `/new_token`

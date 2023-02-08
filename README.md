@@ -8,7 +8,7 @@
 >
 > Telegram频道：https://t.me/embla1c
 >
-> Telegram群组：https://t.me/+aVMJ5JjYZawzZWRh
+> Telegram群组：https://t.me/+7QY3vMI8JQI4ZWZh
 >
 > 节点状态、免费节点更新通知：https://t.me/embla1_state
 >
