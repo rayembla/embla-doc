@@ -33,6 +33,7 @@
 | in_country_code  | 节点的入口区域                                                    | HK,TW                                  |
 | disney_unlocked  | 是否可以进行Disney+解锁<br> 1 - 支持解锁                               | 1                                      |
 | youtube_unlocked | 是否可以进行YouTube解锁<br> 1 - 支持解锁                               | 1                                      |
+| open_ai_unlocked | 是否可以进行OpenAi解锁<br> 1 - 支持解锁                                | 1                                      |
 | netflix_unlocked | 是否可以进行Netflix解锁<br> 1 - 全解锁<br> 2 - 解锁自制剧<br> 3 - 解锁非自制剧   | 1                                      |
 | convert_config   | 订阅转换的规则地址<br>对齐订阅转换当中的config字段，用于规则的生成<br>如果不填会使用默认的魔改的规则  | https://qvcp1z.cf/rule/cover/embla.ini |
 
